@@ -27,7 +27,9 @@
         name: 'FooterVue',
         props: ['cor', 'logo', 'descricao', 'ano'],
         data(){
-            
+            return{
+                
+            }
         }
     }
 </script>
