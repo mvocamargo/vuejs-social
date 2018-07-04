@@ -2,11 +2,10 @@
     <div>
         <nav :class="cor || 'orange'">
             <div class="nav-wrapper container">
-            <a :href="url || '#'" class="brand-logo">{{ logo || 'Site'}}</a>
+            <router-link :to="url || '/'" class="brand-logo">{{ logo || 'Site'}}</router-link>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
+                <li><router-link to="/">Home</router-link></li>
+                <slot></slot>
             </ul>
             </div>
         </nav>
