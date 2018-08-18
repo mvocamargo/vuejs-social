@@ -30,14 +30,18 @@ Route::post('/cadastro', function (Request $request){
         return $validation->errors();
     }
     
+    $imagem = "/perfis/perfil_padrao.png";
+
     $user = User::create([
         'name' => $data['name'],
         'email' => $data['email'],
-        'password' => bcrypt($data['password'])
+        'password' => bcrypt($data['password']),
+        'imagem' => $imagem
     ]);
     
     //Cria um token para usuário com base no e-mail e retorna esse token
     $user->token = $user->createToken($user->email)->accessToken;
+    $user->imagem = asset( $user->imagem );
 
     return $user;
 });
