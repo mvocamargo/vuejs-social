@@ -85,7 +85,12 @@ export default {
 					for (let erro of Object.values(response.data)) {
 						erros += erro + " ";
 					}
-					alert(erros);
+					swal({
+						title: "Sorry!",
+						text: erros,
+						icon: "error",
+						button: "Try Again!",
+					});
 				}
 			} )
 			.catch( e => {

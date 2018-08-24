@@ -44,18 +44,23 @@ export default {
 			})
 			.then( response => {
 				if( response.data.token ){
-					console.log('existe');
+					// console.log('existe');
 					sessionStorage.setItem('usuario', JSON.stringify(response.data));
 					this.$router.push('/');
 				}else if( response.data.status == false){
 					console.log('ñ existe');
 				}else{
-					console.log('dados erados');
+					// console.log('dados erados');
 					let erros = '';
 					for (let erro of Object.values(response.data)) {
-						const element = array[erro];
-						
+						erros += erro + " \n\r";
 					}
+					swal({
+						title: "Sorry!",
+						text: erros,
+						icon: "error",
+						button: "Try Again!",
+					});
 				}
 			} )
 			.catch( e => {
