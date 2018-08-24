@@ -13,6 +13,13 @@
                 <div class="row">
                     <grid-vue tamanho="4">
                         <slot name="menuesquerdo"></slot>
+                        <card-menu-vue>
+                            <h3>Amigos</h3>
+                            <li>Murilo</li>
+                            <li>Gustavo</li>
+                            <li>Mano 1</li>
+                            <li>Mano 2</li>
+                        </card-menu-vue>
                     </grid-vue>
                     <grid-vue tamanho="8">
                         <slot name="principal"></slot>
